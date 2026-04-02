@@ -6,11 +6,11 @@ ARG VITE_API_URL=http://localhost:3000
 ENV VITE_API_URL=$VITE_API_URL
 
 # Copy workspace manifests
-COPY package.json package-lock.json* ./
+COPY package.json ./
 COPY shared/package.json ./shared/
 COPY frontend/package.json ./frontend/
 
-RUN npm ci
+RUN npm install
 
 # Copy source
 COPY shared/ ./shared/

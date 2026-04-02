@@ -33,7 +33,15 @@ Server starts on `http://localhost:3000` (override with `PORT` env var).
 ## Build
 
 ```bash
+# From the repo root (builds shared first, then backend)
 npm run build
+
+# Or build packages in order manually
+npm run build --workspace=shared
+npm run build --workspace=backend
 ```
+
+> **Note:** `@vibe-template/shared` must be built before `backend` because `backend`
+> depends on the compiled type declarations in `shared/dist/`.
 
 Compiles TypeScript to `dist/`.

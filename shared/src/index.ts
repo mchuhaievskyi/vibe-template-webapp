@@ -1,1 +1,1 @@
-export * from "./dtos.js";
+export * from "./dtos";

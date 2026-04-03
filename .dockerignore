@@ -1,0 +1,49 @@
+# Dependencies (installed in the image)
+node_modules
+**/node_modules
+
+# Build outputs (rebuilt inside Docker)
+dist
+**/dist
+
+# Git and version control
+.git
+.gitattributes
+.gitignore
+
+# Secrets and local env (never bake into context)
+.env
+.env.*
+!.env.example
+
+# Logs and diagnostics
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tests and coverage (artifacts only)
+coverage
+.nyc_output
+
+# Caches and tooling
+.cache
+.parcel-cache
+.turbo
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Docker / Compose (not needed inside build context)
+docker-compose*.yml
+docker-compose*.yaml
+
+# CI (not needed for image build)
+.github

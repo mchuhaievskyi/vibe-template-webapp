@@ -1,8 +1,9 @@
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
 # Copy workspace manifests
+COPY package-lock.json ./
 COPY package.json ./
 COPY shared/package.json ./shared/
 COPY backend/package.json ./backend/
@@ -19,12 +20,13 @@ RUN npm run build --workspace=shared
 RUN npm run build --workspace=backend
 
 # ---- Runtime ----
-FROM node:20-alpine AS runtime
+FROM node:24-alpine AS runtime
 
 WORKDIR /app
 
 ENV NODE_ENV=production
 
+COPY package-lock.json ./
 COPY package.json ./
 COPY shared/package.json ./shared/
 COPY backend/package.json ./backend/

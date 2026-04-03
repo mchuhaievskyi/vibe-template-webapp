@@ -10,9 +10,12 @@
     "clean": "rm -rf dist typespec-output"
   },
   "devDependencies": {
-    "@typespec/compiler": "^0.60.0",
-    "@typespec/http": "^0.60.0",
-    "@typespec/openapi3": "^0.60.0",
+    "@typespec/compiler": "^1.10.0",
+    "@typespec/http": "^1.10.0",
+    "@typespec/openapi3": "^1.10.0",
     "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "vite": "8.0.3"
   }
 }
